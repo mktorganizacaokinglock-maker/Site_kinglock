@@ -1,0 +1,455 @@
+/* Fontes e reset */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #eee;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+header { 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  color: #d4af37;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+  height: 68px;
+  padding: 0 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  nav ul { gap: 12px; flex-wrap: wrap; }
+}
+
+header .logo {
+  position: absolute;
+  left: 24px;            /* ajuste fino se quiser 16–32px */
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 600px) {
+  header .logo { left: 20px; }
+}
+
+header .logo img {
+  height: 180px;   /* ajuste fino: use 32–40px se quiser */      
+  width: auto;       
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  header { height: 54px; padding: 0 20px; }
+  header .logo img { height: 100%; }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #d4af37;
+}
+
+/* Seção de introdução */
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: url("imagens_site/fundo.png") center/cover no-repeat; /* use o nome do seu arquivo */
+  position: relative; /* necessário para o overlay funcionar */
+
+}
+
+.intro .btn { margin-top: 18px; }
+
+/* Escurece levemente a imagem para o texto ficar legível */
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45); /* ajuste a intensidade aqui */
+}
+
+/* Garante que o conteúdo fique acima do overlay */
+.intro-content {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-content h1, .pitch h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+
+.logo-main {
+  width: 140px;
+  animation: zoomIn 1.5s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Seção Pitch (entre Início e Casos) */
+.pitch {
+  background: #000;         /* mantém a identidade escura */
+  padding: 60px 20px;       /* respiro vertical */
+  text-align: center;
+  background: url("imagens_site/fundo_2.PNG") center/cover no-repeat;
+  position: relative; /* necessário pro overlay funcionar */
+    /* adições p/ tela cheia e centralização */
+  min-height: 100vh;      /* ocupa a altura inteira da viewport */
+  display: flex;          /* centraliza o conteúdo como na primeira */
+  align-items: center;    /* vertical */
+  justify-content: center;/* horizontal */
+
+  /* opcional: reduzir o respiro p/ não “empurrar” além da tela */
+  padding: 20px;
+  #pitch { scroll-margin-top: 80px; }
+}
+
+/* Escurece levemente a imagem para o texto ficar legível */
+.pitch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45); /* ajuste a intensidade (0.25–0.55) */
+}
+
+/* Conteúdo acima do overlay */
+.pitch-content {
+  position: relative;
+  z-index: 1;
+}
+
+.pitch-content {
+  max-width: 900px;         /* largura confortável para leitura */
+  margin: 0 auto;
+}
+
+.pitch p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ddd;              /* contraste suave sobre o fundo escuro */
+  margin: 0 0 12px;
+}
+
+/* dá um espacinho extra no botão dessa seção */
+.pitch .btn {
+  margin-top: 18px;
+}
+
+/* Casos */
+.cases {
+  padding: 80px 20px;
+  text-align: center;
+  background: #111;
+  scroll-margin-top: 80px; /* compensa ~a altura do header */
+}
+
+.cases h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+  color: #d4af37;
+  margin-bottom: 40px;
+}
+
+.case-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.case-card {
+  background: #222;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.case-card img {
+  width: 100%;
+  height: 300px;      /* escolha o tamanho que preferir */
+  object-fit: contain;/* mostra a imagem inteira, sem corte */
+  background: #0c0c0c;/* “moldura” nas sobras */
+  display: block;
+}
+@media (max-width: 600px) {
+  .case-card img { height: 220px; }
+}
+
+.case-card h3 {
+  color: #d4af37;
+  margin: 15px 0;
+}
+
+.case-card p {
+  padding: 0 15px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.case-card:hover {
+  transform: scale(1.05);
+  border-color: #d4af37;
+}
+
+/* Seção de exemplos (entre #receber e #cases) */
+.examples {
+  background: #000;
+  padding: 80px 20px;
+  scroll-margin-top: 80px; /* não ficar sob o header ao rolar */
+}
+
+.examples-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid das 3 pastas */
+.folders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Grid dos 2 itens */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+/* Cartões padrão */
+.examples .card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 16px;
+}
+
+/* Títulos e textos */
+.examples h3 {
+  color: #d4af37;
+  margin: 12px 0 8px;
+  font-family: 'Cinzel', serif;
+}
+
+.examples p {
+  color: #ddd;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.examples .media {
+  width: 100%;
+  height: 360px;        /* tamanho PADRÃO (ajuste se quiser) */
+  object-fit: contain;  /* MOSTRA a imagem INTEIRA, sem cortar */
+  background: #0c0c0c;  /* “moldura” nas sobras (letterbox) */
+  display: block;
+  border-radius: 6px;
+}
+@media (max-width: 600px) {
+  .examples .media { height: 260px; }
+}
+
+/* CTA centralizado */
+.examples .cta {
+  text-align: center;
+  margin-top: 16px;
+}
+
+
+.btn {
+  display: inline-block;
+  margin: 15px 0 20px;
+  padding: 16px 36px;
+  background: #d4af37;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.btn-lg {
+  padding: 26px 46px;
+  font-size: 28px;
+  border-radius: 8px;
+}
+@media (max-width: 600px) {
+  .btn-lg { padding: 14px 28px; font-size: 16px; }
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* Rodapé */
+footer {
+  background: #000;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+/* Links de contato no rodapé como texto simples */
+footer .contact-actions a {
+  background: transparent;
+  color: #d4af37;           /* dourado; se preferir branco, use #eee */
+  padding: 0;               /* remove o “corpo” de botão */
+  border-radius: 0;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s, text-decoration-color .2s;
+}
+
+footer .contact-actions a:hover {
+  text-decoration: underline;   /* só sublinha ao passar o mouse */
+}
+
+footer p {
+  margin: 0;
+  color: #aaa;
+}
+
+footer .contact-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;     /* quebra em 2 linhas no mobile, se precisar */
+  margin-top: 15px;
+}
+
+/* Links do rodapé: amarelo e sem sublinhado */
+#contato a,
+#contato a:visited {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Mantém sem sublinhado no hover/focus */
+#contato a:hover,
+#contato a:focus {
+  color: #d4af37;   /* se quiser, troque por #fff no hover */
+  text-decoration: none;
+}
+
+/* (Opcional) Deixa os dois links alinhados com espaçamento
+   mesmo sem a classe .contact-actions no HTML atual */
+#contato > div {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.social {
+  margin-top: 15px;
+}
+
+.social a img {
+  width: 25px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social a img:hover {
+  transform: translateY(-5px);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Seção "Você vai receber" */
+.receive {
+  background: #000;              /* mesma base escura */
+  padding: 80px 20px;
+  text-align: center;
+  scroll-margin-top: 80px;       /* evita ficar sob o header fixo, se usar âncora */
+}
+
+.receive-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.receive h2 {
+  font-family: 'Cinzel', serif;  /* mesmo título das outras seções */
+  font-size: 2em;
+  color: #d4af37;                /* dourado da marca */
+  margin-bottom: 28px;
+}
+
+.receive-list {
+  list-style: none;              /* vamos customizar os marcadores */
+  padding: 0;
+  margin: 0;
+  display: grid;                 /* grade responsiva */
+  gap: 14px;
+}
+
+/* Itens com visual de “cartão” discreto */
+.receive-list li {
+  background: #111;
+  color: #ddd;
+  border: 1px solid #222;
+  border-left: 3px solid #d4af37;  /* acento dourado */
+  padding: 14px 16px;
+  text-align: left;
+  line-height: 1.5;
+  border-radius: 8px;
+}
+
+/* responsividade: dois colunas no desktop grande */
+@media (min-width: 900px) {
+  .receive-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#contato { scroll-margin-top: 80px; }

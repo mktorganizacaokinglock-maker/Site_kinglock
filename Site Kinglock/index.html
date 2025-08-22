@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinglock - Investigação</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+<a href="#home" class="logo" aria-label="Kinglock - Início">
+  <img src="imagens_site/logo_kinglock_escrita.PNG" alt="Logo da Kinglock">
+</a>
+
+    <nav>
+      <ul>
+         <li><a href="#home">Início</a></li>
+         <li><a href="#receber">O que vou Receber?</a></li>
+         <li><a href="#cases">Casos</a></li>
+         <li><a href="#contato">Fale conosco</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Apresentação -->
+  <section id="home" class="intro">
+    <div class="intro-content reveal">
+      <img src="imagens_site/logo_kinglock_simbolo.PNG" alt="Logo Kinglock" class="logo-main">
+      <h1>Transforme sua casa em uma cena de investigação com nosso jogo interativo baseado em investigações reais</h1>
+      <p>Receba um dossiê completo com documentos confidenciais, fotos, relatórios e depoimentos em áudio realistas. <br> Você será o detetive. Sua missão é analisar pistas, cruzar informações e descobrir o assassino.</p>
+      <a href="#cases" class="btn">Ver Casos</a>
+    </div>
+  </section>
+
+  <!-- Seção Pitch -->
+<section id="pitch" class="pitch">
+  <div class="pitch-content reveal">
+   <h1> Você está pronto pra investigar um crime real?</h1>
+
+    <!-- Botão que desce até a seção dos casos -->
+    <a href="#cases" class="btn btn-lg">Ver Casos</a>
+  </div>
+</section>
+
+<!-- Seção: Você vai receber -->
+<section id="receber" class="receive">
+  <div class="receive-content reveal">
+    <h2>Você vai receber:</h2>
+    <ul class="receive-list">
+      <li>Acesso imediato na Hotmart;</li>
+      <li>Dossiê completo do caso com documentos realistas da investigação;</li>
+      <li>Arquivos em PDF para impressão;</li>
+      <li>Áudios com depoimentos realistas dos suspeitos;</li>
+      <li>Tudo isso organizado em três pastas confidenciais para você imergir no mundo investigativo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Seção: Exemplos -->
+<section id="exemplos" class="examples">
+  <div class="examples-content reveal">
+    <!-- 3 pastas -->
+    <div class="folders">
+      <article class="card">
+        <img src="imagens_site/arquivo_1.jpg" alt="Pasta 1 - O Caso" class="media">
+        <h3>Pasta 1 — O Caso</h3>
+        <p>Contém a cópia realista do laudo de autópsia, exames toxicológicos, fotos da cena do crime, notícias de jornais e relatório dos analistas da Organização Kinglock.</p>
+      </article>
+
+      <article class="card">
+        <img src="imagens_site/arquivo_2.jpg" alt="Pasta 2 - Depoimentos" class="media">
+        <h3>Pasta 2 — Depoimentos</h3>
+        <p>Transcrição dos depoimentos de todos os suspeitos. Depoimentos em textos, vídeos e áudios — todos parecem ter algo a esconder.</p>
+      </article>
+
+      <article class="card">
+        <img src="imagens_site/arquivo_3.jpg" alt="Pasta 3 - Provas" class="media">
+        <h3>Pasta 3 — Provas</h3>
+        <p>Contém todas as evidências cruciais para revelar o assassino: fotografias físicas e digitais, gravações em áudio, imagens das câmeras de segurança, planta baixa do local do crime e enigmas criptografados.</p>
+      </article>
+    </div>
+
+    <!-- 2 itens lado a lado -->
+    <div class="features">
+      <article class="card">
+        <img src="imagens_site/comunidade_acesso.PNG" alt="Acesso à Comunidade" class="media">
+        <h3>ACESSO À COMUNIDADE</h3>
+        <p>Compare sua conclusão do caso com a solução oficial e veja se você acertou o culpado. Além do suporte com nosso time de agentes da Kinglock.</p>
+      </article>
+
+      <article class="card">
+        <img src="imagens_site/notebook.PNG" alt="Conteúdo Interativo" class="media">
+        <h3>CONTEÚDO INTERATIVO</h3>
+        <p>Acesse todos os materiais gravados e torne a sua experiência ainda mais imersiva.</p>
+      </article>
+    </div>
+
+    <!-- CTA final -->
+    <div class="cta">
+      <a href="#cases" class="btn">Ver Casos</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Seção Casos -->
+  <section id="cases" class="cases">
+    <h2 class="reveal">Casos Disponíveis</h2>
+    <div class="case-container">
+      <div class="case-card reveal">
+        <img src="imagens_site/capa_ultimo_ensaio.png" alt="O Último Ensaio">
+        <p>Um caso enigmático onde cada nota pode revelar o culpado.</p>
+        <a href="o_ultimo_ensaio.html" class="btn">Investigar</a>
+      </div>
+      <div class="case-card reveal">
+        <img src="imagens_site/capa_destino_final.png" alt="Destino Final">
+        <p>Uma investigação que desafia o destino e o acaso.</p>
+        <a href="destino_final.html" class="btn">Investigar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer id="contato">
+    <p>&copy; 2025 Kinglock. Todos os direitos reservados.</p>
+      <div>
+      <a href="https://wa.me/+5541995093868" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/investigacaokinglock" target="_blank" rel="noopener">Instagram</a>
+      </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
