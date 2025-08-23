@@ -48,8 +48,33 @@ header .logo img {
 }
 
 @media (max-width: 600px) {
-  header { height: 54px; padding: 0 20px; }
-  header .logo img { height: 100%; }
+  /* header mais compacto e com menos padding */
+  header { height: 54px; padding: 0 12px; }
+
+  /* logo central e tamanho seguro no mobile */
+  header .logo {
+    position: static;
+    left: auto; top: auto; transform: none;
+  }
+  header .logo img {
+    height: 30px;         /* ajuste fino: 30–34px */
+    width: auto;
+  }
+
+  /* hambúrguer sempre visível dentro da área segura */
+  .menu-toggle{
+    display: block;
+    position: absolute;
+    right: max(10px, env(safe-area-inset-right)); /* evita “sumir” em notch */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; height: 40px;
+  }
+
+  /* dropdown do menu começa logo abaixo do header */
+  nav{
+    top: 54px; left: 0; right: 0;
+  }
 }
 
 nav ul {
