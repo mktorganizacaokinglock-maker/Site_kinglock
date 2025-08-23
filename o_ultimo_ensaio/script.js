@@ -6,7 +6,7 @@ const io = new IntersectionObserver((entries)=> {
 reveals.forEach(el => io.observe(el));
 
 // (Opcional) Defina um link de compra em um só lugar:
-const HOTMART_URL = "https://hotmart.com/seu-produto"; // TROCAR p/ o link do caso
+const HOTMART_URL = "https://pay.hotmart.com/W100777808W"; // TROCAR p/ o link do caso
 document.querySelectorAll(".js-buy").forEach(a => a.href = HOTMART_URL);
 
 // Timer de desconto: mostra após 10s e inicia contagem regressiva de 5:00
