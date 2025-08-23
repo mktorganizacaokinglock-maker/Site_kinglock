@@ -453,3 +453,57 @@ footer .contact-actions {
 }
 
 #contato { scroll-margin-top: 80px; }
+
+/* Botão hambúrguer - escondido no desktop */
+.menu-toggle{ display:none; }
+
+/* Aparência das três barrinhas */
+.menu-toggle span{
+  display:block; width:22px; height:2px; background:#d4af37; margin:5px auto;
+}
+
+/* MOBILE: logo central, hambúrguer à direita, menu em dropdown */
+@media (max-width: 768px){
+  /* Header já tem height:54px no seu CSS; aqui centralizamos a logo de fato */
+  header .logo{
+    position: static;   /* deixa de ser absolute no mobile */
+    left:auto; top:auto; transform:none;
+  }
+
+  /* Tamanho da logo no mobile (ajuste fino se quiser 30–36px) */
+  header .logo img{
+    height: 30px;
+  }
+
+  /* Mostra o botão hambúrguer no móvel, preso à direita */
+  .menu-toggle{
+    display:block;
+    position:absolute; right:16px; top:50%;
+    transform:translateY(-50%);
+    width:40px; height:40px;
+    background:transparent; border:1px solid #222; border-radius:8px;
+  }
+
+  /* Esconde o nav por padrão e transforma em dropdown fixo logo abaixo do header */
+  nav{
+    display:none;                /* escondido até abrir */
+    position:fixed;
+    top:54px; left:0; right:0;   /* 54px = altura do header no seu CSS */
+    background:#111;
+    border-top:1px solid #222;
+    z-index:999;
+  }
+  nav.open{ display:block; }
+
+  /* Menu em coluna, ocupando a largura */
+  nav ul{
+    flex-direction:column;
+    gap:0;
+    margin:0; padding:0;
+  }
+  nav li{ border-top:1px solid #222; }
+  nav a{
+    display:block;
+    padding:14px 20px;
+  }
+}
